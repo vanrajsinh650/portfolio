@@ -1,0 +1,2273 @@
+/* ============================================================
+   styles.css — Realistic Developer Desk Workstation
+   Calm Aesthetic Wall, Realistic Wood Craftsmanship,
+   Windows 11 Acrylic Desktop UI, Zero-Glow Mechanical Keyboard & Mouse
+   ============================================================ */
+
+/* ----- CSS Reset ----- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Calm Developer House Wall (Soft, Warm, Soothing) */
+  --wall-tone-top: #eae7e1;
+  --wall-tone-mid: #e2ded7;
+  --wall-tone-bot: #d4cfc6;
+
+  /* Realistic Honey Oak Wood Desk */
+  --desk-wood-highlight: #e0caa8;
+  --desk-wood-base: #bfa07d;
+  --desk-wood-shadow: #876848;
+  --desk-mat-bg: #1c2028;
+
+  /* Monitor & Hardware */
+  --bezel-color: #0e1117;
+  --stand-color-1: #64748b;
+  --stand-color-2: #94a3b8;
+
+  /* Windows 11 Acrylic Dark Theme */
+  --win-acrylic-bg: rgba(26, 32, 46, 0.88);
+  --win-titlebar-bg: rgba(20, 24, 34, 0.95);
+  --win-border: rgba(255, 255, 255, 0.12);
+  --win-text: #f8fafc;
+  --win-text-muted: #94a3b8;
+  --win-accent: #0078d4;
+  --win-accent-hover: #1084d8;
+  --win-card-bg: rgba(255, 255, 255, 0.04);
+  --win-card-hover: rgba(255, 255, 255, 0.08);
+
+  /* Realistic Mechanical Keyboard (Matte PBT) */
+  --kb-chassis: #12151c;
+  --keycap-top: #2f3545;
+  --keycap-mid: #242936;
+  --keycap-bottom: #161a22;
+  --keycap-text: #cbd5e1;
+  --keycap-pressed: #181c26;
+
+  --font-mono: 'Consolas', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+  --font-sans: 'Segoe UI Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-sans);
+  background-color: var(--wall-tone-mid);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ============================================================
+   Main Desk Room Container
+   ============================================================ */
+.desk-room-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------------
+   1. REALISTIC DEVELOPER ROOM (Behind Laptop Eye POV)
+   ------------------------------------------------------------ */
+.room-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 38%;
+  background: linear-gradient(180deg, #ede7de 0%, #e4ddd2 60%, #d8cfc1 100%);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.room-wall {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Soft ambient window light spill */
+.wall-ambient-light {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 25%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.12) 50%, transparent 80%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Warm golden desk lamp pool of light on right wall */
+.desk-lamp-ambient {
+  position: absolute;
+  top: -15%;
+  right: 6%;
+  width: 440px;
+  height: 400px;
+  background: radial-gradient(circle at 60% 40%, rgba(255, 215, 140, 0.35) 0%, rgba(255, 195, 110, 0.18) 45%, transparent 75%);
+  filter: blur(32px);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Room Wall Decor (Soft out-of-focus background for realistic room depth) */
+.wall-decor {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 min(90px, 9vw);
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+/* Allow lamp fixture interaction only */
+.wall-decor .desk-lamp-fixture {
+  pointer-events: auto;
+}
+
+/* Floating Shelf on left */
+.wall-shelf {
+  position: relative;
+  width: 220px;
+  height: 60px;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding-bottom: 6px;
+}
+
+.shelf-plank {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(180deg, #7c5a3a 0%, #563d27 100%);
+  border-radius: 2px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+/* Potted Succulent Plant */
+.shelf-plant {
+  position: relative;
+  width: 28px;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 2;
+}
+
+.plant-pot {
+  width: 22px;
+  height: 20px;
+  background: #f8fafc;
+  border-radius: 2px 2px 5px 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.plant-leaves {
+  position: relative;
+  width: 26px;
+  height: 18px;
+}
+
+.leaf {
+  position: absolute;
+  background: #22c55e;
+  border-radius: 10px 10px 0 10px;
+}
+.leaf.l1 { width: 8px; height: 14px; left: 4px; bottom: 0; transform: rotate(-25deg); }
+.leaf.l2 { width: 9px; height: 16px; left: 9px; bottom: 1px; transform: rotate(5deg); background: #16a34a; }
+.leaf.l3 { width: 8px; height: 13px; right: 3px; bottom: 0; transform: rotate(30deg); }
+.leaf.l4 { width: 7px; height: 11px; left: 7px; bottom: 3px; background: #4ade80; }
+
+/* Shelf Books */
+.shelf-books {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 46px;
+  z-index: 2;
+}
+
+.book {
+  border-radius: 2px 2px 0 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+.book.b1 { width: 10px; height: 38px; background: #3b82f6; }
+.book.b2 { width: 12px; height: 44px; background: #64748b; }
+.book.b3 { width: 9px; height: 35px; background: #f97316; }
+
+/* Shelf Frame */
+.shelf-frame {
+  width: 32px;
+  height: 42px;
+  background: #ffffff;
+  border: 3px solid #1e293b;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  font-weight: 700;
+  color: #3b82f6;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+/* ------------------------------------------------------------
+   MODERN MINIMALIST ARCHITECTURAL DESK LAMP (Right Wall / Desk)
+   ------------------------------------------------------------ */
+.modern-lamp {
+  position: absolute;
+  top: 5px;
+  right: min(60px, 6vw);
+  width: 180px;
+  height: 180px;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 25;
+}
+
+/* Heavy Weighted Minimalist Desk/Wall Mount */
+.lamp-mount {
+  position: absolute;
+  bottom: 10px;
+  right: 25px;
+  width: 24px;
+  height: 28px;
+  background: linear-gradient(180deg, #3d4554 0%, #1c202a 100%);
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Lower Slim Metal Arm */
+.lamp-stem-lower {
+  position: absolute;
+  bottom: 30px;
+  right: 34px;
+  width: 5px;
+  height: 85px;
+  background: linear-gradient(90deg, #64748b 0%, #334155 50%, #1e293b 100%);
+  border-radius: 2.5px;
+  transform: rotate(-24deg);
+  transform-origin: bottom center;
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Metallic Precision Pivot Joints */
+.lamp-pivot-joint {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle, #cbd5e1 0%, #64748b 50%, #1e293b 100%);
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+  z-index: 5;
+}
+
+.lamp-pivot-joint.p1 {
+  bottom: 98px;
+  right: 64px;
+}
+
+/* Upper Cantilever Arm */
+.lamp-stem-upper {
+  position: absolute;
+  bottom: 104px;
+  right: 70px;
+  width: 4.5px;
+  height: 75px;
+  background: linear-gradient(90deg, #94a3b8 0%, #475569 50%, #1e293b 100%);
+  border-radius: 2px;
+  transform: rotate(56deg);
+  transform-origin: bottom center;
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.lamp-pivot-joint.p2 {
+  top: 32px;
+  right: 124px;
+}
+
+/* Horizontal Lamp Head Connector */
+.lamp-head-arm {
+  position: absolute;
+  top: 37px;
+  right: 118px;
+  width: 20px;
+  height: 5px;
+  background: #334155;
+  border-radius: 2px;
+}
+
+/* Sleek Minimalist Linear LED Bar Head */
+.lamp-head-bar {
+  position: absolute;
+  top: 26px;
+  right: 35px;
+  width: 110px;
+  height: 18px;
+  background: linear-gradient(180deg, #333a48 0%, #191d26 100%);
+  border-radius: 5px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  z-index: 6;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.modern-lamp:hover .lamp-head-bar {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.65);
+}
+
+/* Warm Linear LED Diffuser Strip */
+.lamp-led-strip {
+  flex: 1;
+  height: 7px;
+  background: #fff8e1;
+  border-radius: 3px;
+  box-shadow: 0 0 18px #ffd54f, 0 0 6px #ffffff;
+  transition: all 0.4s ease;
+}
+
+/* Minimalist Touch Switch on the Head */
+.lamp-touch-switch {
+  width: 20px;
+  height: 12px;
+  background: #0f1218;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 6px;
+  outline: none;
+}
+
+.touch-dot {
+  width: 5px;
+  height: 5px;
+  background: #38bdf8;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #38bdf8;
+  transition: all 0.3s ease;
+}
+
+/* Volumetric Warm Light Cone (Emitting from modern lamp) */
+.lamp-light-cone {
+  position: absolute;
+  top: 40px;
+  right: -20px;
+  width: 380px;
+  height: 420px;
+  background: radial-gradient(
+    ellipse at 60% 0%,
+    rgba(255, 218, 130, 0.52) 0%,
+    rgba(255, 195, 95, 0.26) 35%,
+    rgba(255, 175, 75, 0.1) 60%,
+    transparent 80%
+  );
+  filter: blur(16px);
+  pointer-events: none;
+  transform: rotate(10deg);
+  transition: opacity 0.5s ease;
+  z-index: 2;
+}
+
+/* Baseboard where wall meets desk */
+.wall-baseboard {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 22px;
+  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 45%, #e2e8f0 75%, #cbd5e1 100%);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.wall-contact-shadow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.28) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ------------------------------------------------------------
+   2. THE REALISTIC WOODEN DESK SURFACE (Perspective Tabletop)
+   ------------------------------------------------------------ */
+.desk-surface {
+  position: relative;
+  width: 100%;
+  height: 64%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 5;
+  box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.22);
+  perspective: 1400px;
+}
+
+.desk-wood-base {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #cba578 0%, #bd9565 30%, #a47c4e 65%, #835c34 100%);
+}
+
+.desk-wood-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.28;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(40, 20, 5, 0.1) 0px,
+      rgba(40, 20, 5, 0.05) 1px,
+      transparent 2px,
+      transparent 28px,
+      rgba(60, 30, 10, 0.12) 30px,
+      transparent 32px,
+      transparent 56px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 180px,
+      rgba(0, 0, 0, 0.04) 181px,
+      transparent 182px
+    );
+  pointer-events: none;
+}
+
+.desk-bevel-highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0.35) 100%);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+}
+
+.desk-warm-reflection {
+  position: absolute;
+  top: 0;
+  right: 12%;
+  width: 380px;
+  height: 220px;
+  background: radial-gradient(ellipse at center, rgba(255, 220, 150, 0.22) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------
+   3. THE LAPTOP WORKSTATION (Eye POV - Screen Lid + Deck)
+   ------------------------------------------------------------ */
+/* ------------------------------------------------------------
+   3. THE ASUS TUF GAMING 15 WORKSTATION (3D Eye POV)
+   ------------------------------------------------------------ */
+.laptop-workstation {
+  position: relative;
+  width: min(940px, 94vw);
+  margin-top: -145px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  transform-style: preserve-3d;
+  /* Fixed, rock-solid 3D eye POV angle — NO jittery mouse tracking */
+  transform: perspective(1400px) rotateX(2.5deg);
+}
+
+/* A. Laptop Screen Lid (Upright Display with TUF Mecha Lines) */
+.laptop-lid {
+  width: 100%;
+  position: relative;
+  z-index: 5;
+  transform: perspective(1200px) rotateX(-5deg);
+  transform-origin: bottom center;
+  transform-style: preserve-3d;
+}
+
+/* ASUS TUF NanoEdge Gaming Bezel */
+.laptop-bezel.tuf-bezel {
+  width: 100%;
+  aspect-ratio: 16 / 9.8;
+  max-height: 47vh;
+  background: linear-gradient(170deg, #161922 0%, #0d0f15 60%, #090b0f 100%);
+  border-radius: 10px 10px 2px 2px;
+  padding: 14px 10px 12px 10px;
+  /* TUF Mecha Layered 3D Bevels & Depth Shadows */
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 0 0 2px rgba(10, 12, 16, 0.95),
+    4px 0 0 1px #11141c,
+    -4px 0 0 1px #11141c,
+    0 24px 60px rgba(0, 0, 0, 0.75),
+    0 6px 16px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Left & Right 3D side edge thickness of TUF lid */
+.tuf-bezel::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 2px;
+  left: -4px;
+  width: 4px;
+  background: linear-gradient(180deg, #242a38 0%, #12151e 100%);
+  border-radius: 3px 0 0 2px;
+}
+
+.tuf-bezel::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 2px;
+  right: -4px;
+  width: 4px;
+  background: linear-gradient(180deg, #242a38 0%, #12151e 100%);
+  border-radius: 0 3px 2px 0;
+}
+
+/* ASUS TUF Top Webcam Notch Bump */
+.tuf-camera-notch {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 18px;
+  background: linear-gradient(180deg, #232836 0%, #13161f 100%);
+  border-radius: 6px 6px 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: none;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 65;
+}
+
+.tuf-mic-hole {
+  width: 2.5px;
+  height: 2.5px;
+  background: #080a0e;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.tuf-camera-notch .laptop-webcam {
+  position: static;
+  transform: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* TUF Bottom Chin Badge */
+.tuf-chin-badge {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 55;
+  pointer-events: none;
+}
+
+.tuf-logo-text {
+  font-family: var(--font-mono);
+  font-size: 7.5px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #64748b;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+/* Metallic Screen Sheen */
+.screen-glass-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 5%, rgba(255,255,255,0.25) 30%, rgba(255,255,255,0.45) 50%, rgba(255,255,255,0.2) 75%, transparent 95%);
+  border-radius: 8px 8px 0 0;
+  pointer-events: none;
+  z-index: 60;
+}
+
+/* ------------------------------------------------------------
+   B. ASUS TUF TWIN STEALTH HINGES WITH TRAPEZOID CUTOUT
+   ------------------------------------------------------------ */
+.tuf-hinge-assembly {
+  width: min(920px, 92vw);
+  height: 14px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  position: relative;
+  z-index: 6;
+  margin-top: -1px;
+}
+
+/* Twin Heavy-Duty Outer Stealth Hinge Blocks */
+.tuf-hinge-block {
+  width: 90px;
+  height: 100%;
+  background: linear-gradient(180deg, #252b38 0%, #151821 50%, #0d0f15 100%);
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.tuf-hinge-block.left { border-radius: 4px 1px 1px 4px; }
+.tuf-hinge-block.right { border-radius: 1px 4px 4px 1px; }
+
+/* ASUS Signature Center Trapezoid Cutout */
+.tuf-hinge-cutout {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(10, 12, 17, 0.95) 0%, rgba(18, 22, 30, 0.8) 100%);
+  margin: 0 10px;
+  border-radius: 0 0 6px 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* 4-Way Crosshair Status LEDs (ASUS TUF Design) */
+.tuf-status-leds {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.tuf-led {
+  font-size: 8px;
+  color: #475569;
+  opacity: 0.5;
+  transition: all 0.2s;
+}
+
+.tuf-led.active {
+  color: #38bdf8;
+  opacity: 1;
+  text-shadow: 0 0 6px #38bdf8;
+}
+
+.tuf-led.power.active {
+  color: #f59e0b;
+  text-shadow: 0 0 6px #f59e0b;
+}
+
+/* ------------------------------------------------------------
+   C. ASUS TUF GAMING 15 LOWER BASE DECK (Chassis in 3D Perspective)
+   ------------------------------------------------------------ */
+.laptop-deck.tuf-deck {
+  width: 100%;
+  background:
+    linear-gradient(180deg, #1c202a 0%, #151821 40%, #0f1118 100%),
+    repeating-linear-gradient(90deg, transparent 0px, transparent 120px, rgba(255, 255, 255, 0.015) 121px, transparent 122px);
+  border-radius: 2px 2px 14px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  /* 3D Deep Perspective Bevel & Drop Shadow */
+  box-shadow:
+    0 24px 50px rgba(0, 0, 0, 0.8),
+    0 8px 18px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  padding: 6px 14px 10px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  /* Authentic 3D forward projection on desk */
+  transform: perspective(1000px) rotateX(15deg);
+  transform-origin: top center;
+}
+
+/* TUF Upper Deck Controls Bar (Hotkeys & Power Button) */
+.tuf-upper-bar {
+  width: min(640px, 75vw);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  padding: 0 4px;
+}
+
+.tuf-hotkeys {
+  display: flex;
+  gap: 6px;
+}
+
+.tuf-hotkey {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  font-weight: 700;
+  color: #94a3b8;
+  background: linear-gradient(180deg, #252b38 0%, #161922 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2px 7px;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.1s;
+}
+
+.tuf-hotkey:hover {
+  background: #2e3547;
+  color: #f8fafc;
+}
+
+.tuf-hotkey.tuf-crate-key {
+  color: #f59e0b;
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+/* Angular Trapezoidal TUF Power Button */
+.tuf-power-btn {
+  width: 24px;
+  height: 16px;
+  background: linear-gradient(135deg, #28303f 0%, #151822 100%);
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.power-led {
+  width: 4px;
+  height: 4px;
+  background: #f59e0b;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #f59e0b;
+}
+
+/* Deep Recessed TUF Gaming Keyboard Well */
+.keyboard-well.tuf-keyboard-well {
+  width: min(650px, 76vw);
+  background: #0a0c11;
+  border-radius: 8px;
+  padding: 6px 8px;
+  /* Deep 3D recess inner shadow */
+  box-shadow:
+    inset 0 3px 8px rgba(0, 0, 0, 0.85),
+    inset 0 1px 2px rgba(0, 0, 0, 0.9),
+    0 1px 0 rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.keyboard-well .physical-keyboard.tuf-keyboard {
+  width: 100%;
+  height: 125px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Laptop Shadow Cast onto the Wooden Desk */
+.laptop-desk-shadow {
+  position: absolute;
+  bottom: -22px;
+  left: 2%;
+  right: 2%;
+  height: 36px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.35) 45%, transparent 75%);
+  filter: blur(10px);
+  pointer-events: none;
+  z-index: 3;
+}
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ------------------------------------------------------------
+   4. Windows 11 Desktop Icons & Folders (Freely Draggable)
+   ------------------------------------------------------------ */
+.desktop-canvas {
+  position: absolute;
+  top: 0;
+  bottom: 48px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  pointer-events: auto;
+  /* No flex — icons are absolutely positioned */
+}
+
+.desktop-item {
+  position: absolute;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  padding: 6px 4px;
+  border-radius: 6px;
+  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+  border: 1px solid transparent;
+  user-select: none;
+  touch-action: none;
+}
+
+.desktop-item.dragging {
+  cursor: grabbing;
+  opacity: 0.85;
+  z-index: 999 !important;
+  transition: none;
+}
+
+.desktop-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.desktop-item.selected,
+.desktop-item:focus-visible {
+  background: rgba(0, 120, 212, 0.25);
+  border-color: rgba(0, 120, 212, 0.7);
+  box-shadow: 0 0 0 1px rgba(0, 120, 212, 0.35);
+}
+
+.desktop-item:active {
+  background: rgba(0, 120, 212, 0.38);
+}
+
+/* Windows 11 Folder Icon */
+.win-folder-icon {
+  width: 38px;
+  height: 30px;
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.folder-tab {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  width: 16px;
+  height: 8px;
+  background: #f59e0b;
+  border-radius: 3px 3px 0 0;
+}
+
+.folder-front {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25px;
+  background: linear-gradient(180deg, #fbbf24 0%, #f59e0b 100%);
+  border-radius: 3px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* Windows 11 PDF Icon */
+.win-pdf-icon {
+  width: 32px;
+  height: 34px;
+  background: #ffffff;
+  border-radius: 3px;
+  position: relative;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+  border-top: 3px solid #ef4444;
+}
+
+.pdf-tag {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  font-weight: 700;
+  background: #ef4444;
+  color: #ffffff;
+  padding: 1px 4px;
+  border-radius: 2px;
+  margin-bottom: 4px;
+}
+
+/* Windows Terminal Icon */
+.win-terminal-icon {
+  width: 36px;
+  height: 28px;
+  background: #1e1e1e;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #10b981;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+}
+
+.icon-label {
+  font-size: 10px;
+  font-weight: 400;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  max-width: 72px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ------------------------------------------------------------
+   5. Windows 11 File Explorer & App Window (Acrylic Mica)
+   ------------------------------------------------------------ */
+.os-windows-layer {
+  position: absolute;
+  top: 10px;
+  bottom: 46px;
+  left: 102px;
+  right: 12px;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.os-window {
+  position: absolute;
+  inset: 0;
+  background: var(--win-acrylic-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--win-border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: scale(0.97);
+  pointer-events: none;
+  transition: opacity 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow: hidden;
+}
+
+.os-window.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.os-window.maximized {
+  left: -92px;
+  top: -2px;
+  right: -2px;
+  bottom: 0px;
+  border-radius: 0;
+}
+
+/* Windows 11 Titlebar */
+.win-titlebar {
+  height: 38px;
+  background: var(--win-titlebar-bg);
+  border-bottom: 1px solid var(--win-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 8px;
+}
+
+.win-tab-bar {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.win-tab {
+  height: 32px;
+  padding: 0 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 6px 6px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--win-text);
+  border: 1px solid var(--win-border);
+  border-bottom: none;
+}
+
+.tab-icon { font-size: 13px; }
+.tab-close {
+  cursor: pointer;
+  font-size: 10px;
+  color: var(--win-text-muted);
+  border-radius: 3px;
+  padding: 1px 4px;
+}
+.tab-close:hover { background: rgba(255, 255, 255, 0.15); color: #ffffff; }
+
+/* Windows 11 Min/Max/Close Control Buttons */
+.win-window-controls {
+  display: flex;
+  height: 100%;
+}
+
+.win-ctrl-btn {
+  width: 44px;
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: var(--win-text-muted);
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.win-ctrl-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.win-ctrl-btn.btn-close:hover {
+  background: #e81123 !important;
+  color: #ffffff !important;
+}
+
+/* Windows 11 Explorer Navigation & Address Bar */
+.win-nav-bar {
+  height: 36px;
+  background: rgba(18, 22, 32, 0.7);
+  border-bottom: 1px solid var(--win-border);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 10px;
+}
+
+.nav-arrows {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--win-text);
+}
+.nav-arrow { cursor: pointer; }
+.nav-arrow.disabled { color: rgba(255, 255, 255, 0.25); cursor: default; }
+
+.nav-address {
+  flex: 1;
+  height: 26px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--win-border);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--win-text);
+}
+
+.addr-icon { font-size: 12px; }
+.addr-path { color: var(--win-text-muted); }
+
+.nav-search {
+  width: 160px;
+  height: 26px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--win-border);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 10px;
+  color: var(--win-text-muted);
+}
+
+/* Explorer Body */
+.win-body-explorer {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.explorer-sidebar {
+  width: 140px;
+  background: rgba(14, 18, 26, 0.65);
+  border-right: 1px solid var(--win-border);
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 11px;
+}
+
+.sidebar-section {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--win-text-muted);
+  padding: 4px 6px;
+}
+
+.sidebar-item {
+  padding: 5px 8px;
+  border-radius: 4px;
+  color: var(--win-text);
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.sidebar-item:hover { background: rgba(255, 255, 255, 0.08); }
+.sidebar-item.active { background: rgba(255, 255, 255, 0.12); font-weight: 500; }
+
+.explorer-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+}
+
+.explorer-content.full-width {
+  width: 100%;
+}
+
+/* Projects Folder Grid */
+.folder-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-card {
+  padding: 12px 14px;
+  background: var(--win-card-bg);
+  border: 1px solid var(--win-border);
+  border-radius: 6px;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.project-card:hover {
+  background: var(--win-card-hover);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.win-badge {
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+
+.badge-blue { background: rgba(0, 120, 212, 0.25); color: #60a5fa; }
+.badge-purple { background: rgba(168, 85, 247, 0.25); color: #c084fc; }
+.badge-green { background: rgba(16, 185, 129, 0.25); color: #34d399; }
+
+.card-links { display: flex; gap: 6px; }
+
+.link-btn {
+  font-size: 10px;
+  color: var(--win-text-muted);
+  text-decoration: none;
+  padding: 3px 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  transition: all 0.15s;
+}
+
+.link-btn:hover { background: rgba(255, 255, 255, 0.16); color: #ffffff; }
+.link-btn.primary { background: var(--win-accent); color: #ffffff; }
+.link-btn.primary:hover { background: var(--win-accent-hover); }
+
+.card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.card-desc {
+  font-size: 11px;
+  color: var(--win-text-muted);
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tag-row span {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #cbd5e1;
+}
+
+/* Windows Statusbar */
+.win-statusbar {
+  height: 24px;
+  background: rgba(14, 18, 26, 0.9);
+  border-top: 1px solid var(--win-border);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 8px;
+  font-size: 10px;
+  color: var(--win-text-muted);
+}
+
+/* Bio, Skills & Contact in Windows */
+.bio-header-badge {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.lead-bio {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--win-text-muted);
+  margin-bottom: 12px;
+}
+
+.section-heading {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--win-text);
+  margin-bottom: 8px;
+}
+
+.timeline-list {
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--win-text-muted);
+}
+
+.timeline-list strong { color: var(--win-text); }
+
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill-box {
+  padding: 10px 12px;
+  background: var(--win-card-bg);
+  border: 1px solid var(--win-border);
+  border-radius: 6px;
+}
+
+.box-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.box-items {
+  font-size: 11px;
+  color: var(--win-text-muted);
+  line-height: 1.4;
+}
+
+/* Windows 11 Contact & Profiles Hub (Zero Visitor Message Form) */
+.contact-hub {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-header h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.contact-subtitle {
+  font-size: 11px;
+  color: var(--win-text-dim);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.contact-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 10px;
+}
+
+.contact-card {
+  background: var(--win-card-bg);
+  border: 1px solid var(--win-border);
+  border-radius: 6px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.contact-card:hover {
+  background: var(--win-card-hover);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.contact-card.full-span {
+  grid-column: 1 / -1;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.contact-card-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.contact-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contact-card-label {
+  font-size: 10px;
+  color: var(--win-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.contact-card-value {
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  word-break: break-all;
+}
+
+.contact-card-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.contact-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 12px;
+  font-size: 10.5px;
+  font-weight: 500;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: 1px solid transparent;
+}
+
+.contact-action-btn.primary {
+  background: var(--win-accent);
+  color: #ffffff;
+}
+
+.contact-action-btn.primary:hover {
+  background: var(--win-accent-hover);
+}
+
+.contact-action-btn.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--win-text);
+  border-color: var(--win-border);
+}
+
+.contact-action-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.contact-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.meta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  color: var(--win-text-dim);
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+  display: inline-block;
+}
+
+.win-submit-btn {
+  padding: 6px 14px;
+  background: var(--win-accent);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.15s;
+}
+
+.win-submit-btn:hover { background: var(--win-accent-hover); }
+
+/* Resume Sheet */
+.resume-doc-center {
+  display: flex;
+  justify-content: center;
+}
+
+.resume-sheet {
+  width: 90%;
+  background: #ffffff;
+  color: #0f172a;
+  padding: 18px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-size: 11px;
+}
+
+.resume-sheet h2 { font-size: 16px; margin-bottom: 2px; }
+.resume-sub { font-size: 11px; color: #475569; margin-bottom: 8px; }
+.resume-sheet hr { border: none; border-top: 1px solid #e2e8f0; margin: 8px 0; }
+.resume-sheet p { margin-bottom: 6px; }
+
+/* PowerShell Terminal */
+.terminal-body {
+  background: #0c0e14;
+  padding: 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  height: 100%;
+}
+
+.term-line { margin-bottom: 4px; }
+.term-prompt { color: #38bdf8; }
+.term-output { color: #94a3b8; margin-bottom: 6px; }
+.term-cursor { animation: cursor-blink-anim 1s infinite; color: #38bdf8; }
+
+@keyframes cursor-blink-anim {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* ------------------------------------------------------------
+   6. Windows 11 Centered Taskbar
+   ------------------------------------------------------------ */
+.win-taskbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: rgba(14, 18, 28, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 0 12px;
+}
+
+.taskbar-center {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.taskbar-btn {
+  width: 34px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  position: relative;
+}
+
+.taskbar-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.taskbar-btn:active {
+  transform: scale(0.92);
+}
+
+.taskbar-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  width: 14px;
+  height: 3px;
+  background: var(--win-accent);
+  border-radius: 2px;
+}
+
+/* Windows 11 Start Button Icon */
+.win-grid-logo {
+  display: grid;
+  grid-template-columns: 7px 7px;
+  grid-gap: 2px;
+}
+
+.win-grid-logo span {
+  width: 7px;
+  height: 7px;
+  background: #0078d4;
+  border-radius: 1px;
+}
+
+/* Taskbar System Tray (Right edge) */
+.taskbar-tray {
+  position: absolute;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: var(--win-text-muted);
+}
+
+.tray-icon { cursor: pointer; }
+
+.tray-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 10px;
+  line-height: 1.2;
+  color: var(--win-text);
+  font-family: var(--font-sans);
+}
+
+/* ------------------------------------------------------------
+   7. REALISTIC LAPTOP KEYBOARD & PRECISION TRACKPAD (ZERO NEON GLOW)
+   ------------------------------------------------------------ */
+/* ------------------------------------------------------------
+   7. ASUS TUF GAMING 15 KEYBOARD & 3D CHICLET KEYCAPS
+   Signature Frosted Translucent White WASD Keys, Zero-Glow Tactile Action
+   ------------------------------------------------------------ */
+.physical-keyboard.tuf-keyboard {
+  width: 100%;
+  height: 140px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2px 4px;
+}
+
+.kb-row {
+  display: flex;
+  gap: 3px;
+  height: 19px;
+}
+
+.kb-row-fn {
+  height: 15px;
+  margin-bottom: 2px;
+}
+
+/* Individual 3D Chiclet Gaming Key */
+.key {
+  flex: 1;
+  background: linear-gradient(180deg, #2a2f3e 0%, #1c202a 65%, #12151d 100%);
+  color: #cbd5e1;
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  /* 3D Physical Keycap Height / Bevel Edge */
+  border-bottom: 2.5px solid #0b0d13;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  transition: transform 0.05s ease, background 0.05s ease, border-bottom 0.05s ease;
+  user-select: none;
+}
+
+/* Function Row Keys */
+.key-fn, .key-fn-esc, .key-del {
+  font-size: 7.5px;
+  color: #94a3b8;
+  background: linear-gradient(180deg, #222733 0%, #161822 100%);
+}
+
+.key-fn-esc { flex: 1.2; color: #f59e0b; }
+.key-del { flex: 1.1; }
+.key-tilde { flex: 0.9; }
+
+/* ─── ASUS TUF ICONIC FROSTED TRANSLUCENT WHITE WASD KEYCAPS ─── */
+.key.key-wasd {
+  background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 60%, #cbd5e1 100%) !important;
+  color: #0f172a !important;
+  font-weight: 900 !important;
+  border-bottom: 2.5px solid #64748b !important;
+  border-top: 1px solid #ffffff !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.8) !important;
+  border-right: 1px solid rgba(148, 163, 184, 0.8) !important;
+  /* Frosted White Gaming Key Underglow */
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.35), 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+/* Key proportions */
+.key-esc, .key-tab { flex: 1.3; }
+.key-backspace { flex: 1.7; }
+.key-caps { flex: 1.5; }
+.key-enter {
+  flex: 1.9;
+  background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 70%, #1e40af 100%);
+  color: #ffffff;
+  border-bottom-color: #0f172a;
+}
+.key-shift-l { flex: 2.0; }
+.key-shift-r { flex: 2.2; }
+.key-ctrl, .key-alt, .key-cmd, .key-fn-mod { flex: 1.1; }
+
+/* ASUS TUF Contoured Gaming Spacebar */
+.key-space.tuf-space {
+  flex: 5.2;
+  border-radius: 3px 3px 6px 6px;
+  background: linear-gradient(180deg, #242938 0%, #191c26 65%, #0f1218 100%);
+}
+
+/* Dedicated Arrow Keys */
+.key-arrow {
+  flex: 0.95;
+  font-size: 7px;
+  color: #38bdf8;
+  background: linear-gradient(180deg, #222836 0%, #151821 100%);
+}
+
+/* ─── REAL-TIME PHYSICAL KEY DEPRESSION (ZERO NEON GLOW) ─── */
+.key.pressed {
+  transform: translateY(2px) scale(0.98);
+  border-bottom: 0.5px solid transparent !important;
+  background: #11141c !important;
+  background-image: none !important;
+  color: #64748b !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+.key.key-wasd.pressed {
+  transform: translateY(2px) scale(0.98);
+  border-bottom: 0.5px solid transparent !important;
+  background: #94a3b8 !important;
+  color: #020617 !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ------------------------------------------------------------
+   8. ASUS TUF PALM REST & PRECISION GAMING TRACKPAD
+   ------------------------------------------------------------ */
+.tuf-palm-row {
+  width: min(650px, 76vw);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+  padding: 0 4px;
+}
+
+.tuf-palm-side {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.tuf-palm-side.left {
+  justify-content: flex-start;
+}
+
+.tuf-palm-side.right {
+  justify-content: flex-end;
+}
+
+.tuf-engraved-text {
+  font-family: var(--font-mono);
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #475569;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* TUF Spec Sticker (RTX + 144Hz) */
+.tuf-spec-badge {
+  background: linear-gradient(135deg, #10141c 0%, #05070a 100%);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 2px;
+  padding: 2px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.badge-line1 {
+  font-size: 6.5px;
+  font-weight: 800;
+  color: #10b981;
+  letter-spacing: 0.5px;
+}
+
+.badge-line2 {
+  font-size: 5.5px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+/* ASUS TUF Large Precision Trackpad */
+.laptop-trackpad.tuf-trackpad {
+  width: min(220px, 30vw);
+  height: 40px;
+  background: linear-gradient(180deg, #1a1e28 0%, #131620 100%);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.06);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.1s, box-shadow 0.1s;
+}
+
+.tuf-trackpad-corner-mark {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 7px;
+  height: 7px;
+  border-top: 1.5px solid #475569;
+  border-right: 1.5px solid #475569;
+  opacity: 0.6;
+}
+
+.laptop-trackpad.tuf-trackpad:active {
+  background: #0f1218;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.75);
+}
+
+/* ------------------------------------------------------------
+   9. 3D PHYSICAL FRONT LIP OF LAPTOP CHASSIS
+   Gives authentic 3D solid unibody thickness resting on the wood desk!
+   ------------------------------------------------------------ */
+.tuf-chassis-lip {
+  width: 100%;
+  height: 9px;
+  background: linear-gradient(180deg, #181c25 0%, #101219 50%, #080a0e 100%);
+  border-radius: 0 0 14px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.85);
+  position: relative;
+  margin-top: 3px;
+}
+
+.tuf-lip-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 5px;
+  background: #07080c;
+  border-radius: 0 0 4px 4px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+/* ------------------------------------------------------------
+   10. ERGONOMIC GAMING MOUSE (Stealth Matte Black)
+   Static on desk — NO mouse movement tracking
+   ------------------------------------------------------------ */
+.physical-mouse.tuf-mouse {
+  width: 80px;
+  height: 126px;
+  position: relative;
+}
+
+.mouse-body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(175deg, #222734 0%, #151822 65%, #0e1017 100%);
+  border-radius: 36px 36px 42px 42px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.7),
+    inset 0 1px 2px rgba(255, 255, 255, 0.14);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.mouse-buttons-row {
+  height: 48px;
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.mouse-btn {
+  flex: 1;
+  background: linear-gradient(180deg, #282e3d 0%, #1a1e28 100%);
+  transition: background 0.06s, transform 0.06s;
+}
+
+.mouse-btn-left {
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.mouse-btn.pressed {
+  background: #11141c !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8);
+  transform: translateY(1.5px);
+}
+
+.mouse-wheel {
+  width: 10px;
+  background: #0b0d12;
+  margin: 7px 0;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.wheel-rib {
+  width: 6px;
+  height: 2px;
+  background: #475569;
+  border-radius: 1px;
+}
+
+.mouse-palm {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tuf-mouse-emblem {
+  font-size: 14px;
+  color: #38bdf8;
+  opacity: 0.65;
+  filter: drop-shadow(0 0 4px #38bdf8);
+}
+
+.desk-props-right {
+  position: absolute;
+  right: max(20px, calc(50% - 590px));
+  bottom: 85px;
+  display: flex;
+  align-items: flex-end;
+  z-index: 10;
+}
+
+/* ------------------------------------------------------------
+   11. DESK PROPS (CERAMIC COFFEE MUG — DUCK REMOVED)
+   ------------------------------------------------------------ */
+.desk-props-left {
+  position: absolute;
+  left: max(20px, calc(50% - 590px));
+  bottom: 85px;
+  display: flex;
+  align-items: flex-end;
+  z-index: 10;
+}
+
+.desk-coaster {
+  position: relative;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: #8b6545;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35), inset 0 0 6px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ceramic Coffee Cup */
+.desk-coffee { cursor: pointer; }
+
+.coffee-cup {
+  position: relative;
+  width: 44px;
+  height: 50px;
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 60%, #e2e8f0 100%);
+  border-radius: 4px 4px 10px 10px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+  overflow: visible;
+}
+
+.cup-rim-shine {
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  right: 2px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+}
+
+.cup-handle {
+  position: absolute;
+  right: -9px;
+  top: 8px;
+  width: 11px;
+  height: 20px;
+  border: 3px solid #f1f5f9;
+  border-radius: 0 8px 8px 0;
+}
+
+.coffee-liquid {
+  width: 26px;
+  height: 8px;
+  background: #3e1f0e;
+  margin: 3px auto 0;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.latte-swirl {
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 14px;
+  height: 4px;
+  background: #ca8a04;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.steam-vapors {
+  position: absolute;
+  top: -18px;
+  left: 8px;
+  display: flex;
+  gap: 4px;
+}
+
+.vapor {
+  width: 3px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 3px;
+  animation: vapor-drift 2.5s infinite ease-out;
+}
+
+.v2 { animation-delay: 1.2s; }
+
+@keyframes vapor-drift {
+  0%   { opacity: 0; transform: translateY(0) scaleX(1); }
+  50%  { opacity: 0.5; transform: translateY(-8px) scaleX(1.4); }
+  100% { opacity: 0; transform: translateY(-18px) scaleX(1.8); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .desk-props-left, .desk-props-right { display: none; }
+  .wall-decor { display: none; }
+  .laptop-workstation { width: 98vw; margin-top: -30px; }
+  .desktop-canvas { display: none; }
+  .os-windows-layer { left: 8px; right: 8px; top: 8px; bottom: 44px; }
+  .os-window.maximized { left: 0; }
+  .keyboard-well { width: 94vw; }
+  .key { font-size: 7px; }
+  .laptop-trackpad { width: 140px; height: 34px; }
+  .explorer-sidebar { display: none; }
+}
+
+@media (max-width: 600px) {
+  .nav-search { display: none; }
+  .nav-address { font-size: 9px; padding: 0 4px; }
+  .taskbar-tray .tray-icon { display: none; }
+  .win-taskbar { padding: 0 6px; height: 34px; }
+  .taskbar-center { gap: 2px; }
+  .taskbar-btn { width: 26px; height: 26px; font-size: 13px; }
+  .tray-clock { font-size: 8px; }
+  .win-tab { height: 28px; padding: 0 8px; font-size: 10px; }
+  .win-titlebar { height: 32px; }
+  .win-ctrl-btn { width: 32px; font-size: 9px; }
+  .card-title { font-size: 11px; }
+  .card-desc { font-size: 10px; }
+}
+
+/* ============================================================
+   10. MODERN MINIMALIST DESK LAMP TOGGLE (Warm Light On/Off)
+   ============================================================ */
+
+/* When lamp is ON (Default) */
+.modern-lamp:hover .lamp-head-bar {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* When lamp is OFF — Atmospheric Evening Twilight */
+.room-background.lamp-off {
+  background: linear-gradient(180deg, #1c212c 0%, #151a24 50%, #0e1219 100%);
+  transition: background 0.6s ease;
+}
+
+.room-background.lamp-off .wall-ambient-light {
+  opacity: 0.15;
+  transition: opacity 0.6s ease;
+}
+
+.room-background.lamp-off .desk-lamp-ambient {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.room-background.lamp-off .lamp-led-strip {
+  background: #252d3d;
+  box-shadow: none;
+}
+
+.room-background.lamp-off .touch-dot {
+  background: #f59e0b;
+  box-shadow: 0 0 3px #f59e0b;
+}
+
+.room-background.lamp-off .lamp-light-cone {
+  opacity: 0;
+}
+
+.room-background.lamp-off .desk-warm-reflection {
+  opacity: 0;
+}
+
+/* Smooth Transitions */
+.desk-lamp-ambient,
+.lamp-light-cone,
+.desk-warm-reflection {
+  transition: opacity 0.5s ease;
+}
+
+/* ============================================================
+   11. WALL STICKY NOTE (Contenteditable, no save)
+   ============================================================ */
+.wall-sticky-note {
+  position: absolute;
+  top: 12px;
+  right: 18%;
+  width: 110px;
+  min-height: 90px;
+  background: #fef08a;
+  border-radius: 2px;
+  box-shadow:
+    3px 4px 10px rgba(0, 0, 0, 0.22),
+    0 1px 2px rgba(0, 0, 0, 0.12);
+  transform: rotate(-2.5deg);
+  z-index: 8;
+  overflow: hidden;
+  pointer-events: auto;
+  font-family: var(--font-mono);
+}
+
+/* Slight curl at bottom right */
+.wall-sticky-note::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(225deg, #c9b200 45%, #fef08a 55%);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.note-header {
+  background: #eab308;
+  padding: 4px 7px;
+  font-size: 9px;
+  font-weight: 700;
+  color: #78350f;
+  letter-spacing: 0.3px;
+  user-select: none;
+}
+
+.note-body {
+  padding: 6px 7px;
+  font-size: 9.5px;
+  color: #1e1a00;
+  line-height: 1.45;
+  min-height: 64px;
+  outline: none;
+  word-break: break-word;
+  white-space: pre-wrap;
+  cursor: text;
+}
+
+.note-body:empty::before {
+  content: attr(data-placeholder);
+  color: rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+/* ============================================================
+   12. IMPROVED LAPTOP HINGE (More realistic)
+   ============================================================ */
+.laptop-hinge {
+  width: min(900px, 91vw);
+  height: 10px;
+  background: linear-gradient(180deg,
+    #0b0d11 0%,
+    #1e232d 25%,
+    #3a4050 50%,
+    #2c323f 60%,
+    #11141a 85%,
+    #080a0e 100%);
+  border-radius: 3px;
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 6;
+  margin-top: -1px;
+}
+
+/* ============================================================
+   13. DESKTOP ICON DRAG STATES
+   ============================================================ */
+.desktop-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.desktop-item.selected,
+.desktop-item:focus-visible {
+  background: rgba(0, 120, 212, 0.25);
+  border-color: rgba(0, 120, 212, 0.7);
+  box-shadow: 0 0 0 1px rgba(0, 120, 212, 0.35);
+}
+
+.desktop-item:active {
+  background: rgba(0, 120, 212, 0.38);
+}
+
+/* ============================================================
+   14. IMPROVED DESK SURFACE 3D PERSPECTIVE
+   ============================================================ */
+.desk-surface {
+  perspective: 1400px;
+  perspective-origin: 50% -20%;
+}
+
+/* Slight perspective on the entire scene via POV */
+.desk-room-wrapper {
+  --pov-x: 0deg;
+  --pov-y: 0deg;
+  --scene-rx: 2deg;
+  --scene-ry: 0deg;
+}
+
+/* ============================================================
+   15. LAPTOP SCREEN — Slightly indented inner frame
+   ============================================================ */
+.computer-screen {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  background: radial-gradient(circle at 60% 30%, #17253d 0%, #101826 45%, #0a0e17 100%);
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.7), inset 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Modern Desk Lamp Styles Complete */

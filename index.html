@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Realistic Developer Desk — Aesthetic Windows PC Workstation with live mirrored keyboard and mouse">
+  <title>Developer Desk — Portfolio</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230078d4'/><path d='M6 6h9v9H6zM17 6h9v9H17zM6 17h9v9H6zM17 17h9v9H17z' fill='%23ffffff'/></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Full-Screen Realistic Developer Room & Workstation (Eye POV) -->
+  <div class="desk-room-wrapper" id="room-wrapper">
+
+    <!-- 1. Realistic Cozy Developer Room Background (Wall, Shelf, Ambient Lamp Lighting) -->
+    <div class="room-background">
+      <div class="room-wall">
+        <!-- Soft Warm Ambient Lighting & Desk Lamp Light Pool -->
+        <div class="wall-ambient-light"></div>
+        <div class="desk-lamp-ambient"></div>
+
+        <!-- Room Decor on Wall (Soft out-of-focus background) -->
+        <div class="wall-decor">
+          <!-- Floating Wooden Shelf -->
+          <div class="wall-shelf">
+            <div class="shelf-plank"></div>
+            <!-- Potted Succulent Plant -->
+            <div class="shelf-plant" title="Potted Succulent">
+              <div class="plant-pot"></div>
+              <div class="plant-leaves">
+                <span class="leaf l1"></span>
+                <span class="leaf l2"></span>
+                <span class="leaf l3"></span>
+                <span class="leaf l4"></span>
+              </div>
+            </div>
+            <!-- Developer Books -->
+            <div class="shelf-books">
+              <span class="book b1" title="Clean Code"></span>
+              <span class="book b2" title="System Design"></span>
+              <span class="book b3" title="TypeScript &amp; Rust"></span>
+            </div>
+            <!-- Mini Framed Code Artwork -->
+            <div class="shelf-frame" title="Binary Wall Art">
+              <div class="frame-content">&lt;/&gt;</div>
+            </div>
+          </div>
+
+          <!-- Modern Minimalist Designer Desk Lamp (Right Side) -->
+          <div class="modern-lamp" id="desk-lamp" title="Click lamp to toggle light">
+            <div class="lamp-mount"></div>
+            <div class="lamp-stem-lower"></div>
+            <div class="lamp-pivot-joint p1"></div>
+            <div class="lamp-stem-upper"></div>
+            <div class="lamp-pivot-joint p2"></div>
+            <div class="lamp-head-arm"></div>
+            <div class="lamp-head-bar">
+              <div class="lamp-led-strip"></div>
+              <button class="lamp-touch-switch" id="lamp-toggle-btn" aria-label="Toggle Desk Lamp" title="Touch to toggle light">
+                <span class="touch-dot"></span>
+              </button>
+            </div>
+            <div class="lamp-light-cone"></div>
+          </div>
+
+          <!-- Wall Sticky Note (Write anything — not saved) -->
+          <div class="wall-sticky-note" id="wall-note">
+            <div class="note-header">📝 Notes</div>
+            <div class="note-body" contenteditable="true" spellcheck="false" data-placeholder="Write anything…"></div>
+          </div>
+        </div>
+
+        <!-- Baseboard Wall Molding & Soft Contact Shadow -->
+        <div class="wall-baseboard"></div>
+        <div class="wall-contact-shadow"></div>
+      </div>
+    </div>
+
+    <!-- 2. The Realistic Desk Surface (Eye POV Perspective) -->
+    <div class="desk-surface">
+      <!-- Natural Honey Oak Wood Layers -->
+      <div class="desk-wood-base"></div>
+      <div class="desk-wood-grain"></div>
+      <div class="desk-bevel-highlight"></div>
+      <div class="desk-warm-reflection"></div>
+
+      <!-- 3. THE LAPTOP WORKSTATION (Eye POV - Screen Lid + Keyboard Base Deck) -->
+      <div class="laptop-workstation" id="laptop-rig">
+        
+        <!-- A. Laptop Screen Lid (Upper Upright Display) -->
+        <div class="laptop-lid">
+          <div class="laptop-bezel tuf-bezel">
+            <!-- ASUS TUF Top Webcam Notch with Stereo Microphones -->
+            <div class="tuf-camera-notch">
+              <span class="tuf-mic-hole"></span>
+              <div class="laptop-webcam">
+                <span class="webcam-lens"></span>
+                <span class="webcam-dot"></span>
+              </div>
+              <span class="tuf-mic-hole"></span>
+            </div>
+
+            <!-- Subtle Screen Glass Reflection / Sheen -->
+            <div class="screen-glass-glare"></div>
+
+            <!-- Windows 11 Desktop Screen -->
+            <div class="computer-screen" id="computer-screen">
+            
+            <!-- Desktop Icons & Folders Area -->
+            <div class="desktop-canvas" id="desktop-canvas">
+
+              <!-- Folder 1: Projects -->
+              <div class="desktop-item" tabindex="0" role="button" data-app="projects" title="Open Projects">
+                <div class="win-folder-icon">
+                  <div class="folder-tab"></div>
+                  <div class="folder-front"></div>
+                </div>
+                <div class="icon-label">Projects</div>
+              </div>
+
+              <!-- Folder 2: About Me -->
+              <div class="desktop-item" tabindex="0" role="button" data-app="about" title="Open About Me">
+                <div class="win-folder-icon">
+                  <div class="folder-tab"></div>
+                  <div class="folder-front"></div>
+                </div>
+                <div class="icon-label">About_Me</div>
+              </div>
+
+              <!-- Folder 3: Skills -->
+              <div class="desktop-item" tabindex="0" role="button" data-app="skills" title="Open Skills">
+                <div class="win-folder-icon">
+                  <div class="folder-tab"></div>
+                  <div class="folder-front"></div>
+                </div>
+                <div class="icon-label">Skills</div>
+              </div>
+
+              <!-- Folder 4: Contact -->
+              <div class="desktop-item" tabindex="0" role="button" data-app="contact" title="Open Contact">
+                <div class="win-folder-icon">
+                  <div class="folder-tab"></div>
+                  <div class="folder-front"></div>
+                </div>
+                <div class="icon-label">Contact</div>
+              </div>
+
+              <!-- File: Resume.pdf -->
+              <div class="desktop-item" tabindex="0" role="button" data-app="resume" title="Open Resume.pdf">
+                <div class="win-pdf-icon">
+                  <div class="pdf-tag">PDF</div>
+                </div>
+                <div class="icon-label">Resume.pdf</div>
+              </div>
+
+
+            </div>
+
+            <!-- Active Windows 11 App / Explorer Windows Layer -->
+            <div class="os-windows-layer" id="windows-layer">
+
+              <!-- WINDOW 1: PROJECTS FOLDER (Windows 11 Explorer Aesthetic) -->
+              <div class="os-window active" id="win-projects" data-window="projects">
+                <div class="win-titlebar">
+                  <div class="win-tab-bar">
+                    <div class="win-tab active">
+                      <span class="tab-icon">📁</span>
+                      <span class="tab-title">Projects</span>
+                      <span class="tab-close" data-win-close="projects">✕</span>
+                    </div>
+                  </div>
+                  <div class="win-window-controls">
+                    <button class="win-ctrl-btn btn-min" title="Minimize">─</button>
+                    <button class="win-ctrl-btn btn-max" title="Maximize">▢</button>
+                    <button class="win-ctrl-btn btn-close" data-win-close="projects" title="Close">✕</button>
+                  </div>
+                </div>
+
+                <!-- Explorer Navigation & Address Bar -->
+                <div class="win-nav-bar">
+                  <div class="nav-arrows">
+                    <span class="nav-arrow disabled">←</span>
+                    <span class="nav-arrow disabled">→</span>
+                    <span class="nav-arrow">↑</span>
+                  </div>
+                  <div class="nav-address">
+                    <span class="addr-icon">💻</span>
+                    <span class="addr-path">This PC &gt; Documents &gt; Projects</span>
+                  </div>
+                  <div class="nav-search">
+                    <span>🔍 Search Projects</span>
+                  </div>
+                </div>
+
+                <div class="win-body-explorer">
+                  <!-- Left Sidebar Navigation -->
+                  <div class="explorer-sidebar">
+                    <div class="sidebar-section">Quick Access</div>
+                    <div class="sidebar-item active">📁 Projects</div>
+                    <div class="sidebar-item" data-open="about">👤 About Me</div>
+                    <div class="sidebar-item" data-open="skills">⚡ Skills</div>
+                    <div class="sidebar-item" data-open="contact">📬 Contact</div>
+                    <div class="sidebar-section" style="margin-top: 10px;">This PC</div>
+                    <div class="sidebar-item">💽 Local Disk (C:)</div>
+                    <div class="sidebar-item">💾 Dev Drive (D:)</div>
+                  </div>
+
+                  <!-- Right Main Content Area -->
+                  <div class="explorer-content">
+                    <div class="folder-grid">
+                      <!-- Project Card 1 -->
+                      <article class="project-card">
+                        <div class="card-header-row">
+                          <span class="win-badge badge-blue">Full Stack</span>
+                          <div class="card-links">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-btn">GitHub ↗</a>
+                            <a href="#" class="link-btn primary">Live Demo ↗</a>
+                          </div>
+                        </div>
+                        <h4 class="card-title">Autonomous Workflow Engine</h4>
+                        <p class="card-desc">Distributed orchestration platform with dynamic agent scheduling, stream execution, and real-time observability.</p>
+                        <div class="tag-row">
+                          <span>TypeScript</span><span>Node.js</span><span>PostgreSQL</span><span>Redis</span>
+                        </div>
+                      </article>
+
+                      <!-- Project Card 2 -->
+                      <article class="project-card">
+                        <div class="card-header-row">
+                          <span class="win-badge badge-purple">3D &amp; Graphics</span>
+                          <div class="card-links">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-btn">GitHub ↗</a>
+                            <a href="#" class="link-btn primary">Live Demo ↗</a>
+                          </div>
+                        </div>
+                        <h4 class="card-title">WebGL Cinematic Space Flight</h4>
+                        <p class="card-desc">Interactive 3D simulation with custom shaders, relativistic black hole accretion disk, and camera choreography.</p>
+                        <div class="tag-row">
+                          <span>Three.js</span><span>React 19</span><span>R3F</span><span>GLSL</span>
+                        </div>
+                      </article>
+
+                      <!-- Project Card 3 -->
+                      <article class="project-card">
+                        <div class="card-header-row">
+                          <span class="win-badge badge-green">Cloud Systems</span>
+                          <div class="card-links">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-btn">GitHub ↗</a>
+                            <a href="#" class="link-btn primary">Live Demo ↗</a>
+                          </div>
+                        </div>
+                        <h4 class="card-title">Telemetry Observability Platform</h4>
+                        <p class="card-desc">Sub-second analytical queries over billions of event logs with responsive data visualization tables.</p>
+                        <div class="tag-row">
+                          <span>Next.js</span><span>ClickHouse</span><span>Docker</span><span>Tailwind</span>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="win-statusbar">
+                  <span>3 items selected</span>
+                  <span>|</span>
+                  <span>100% Free Disk Space</span>
+                </div>
+              </div>
+
+              <!-- WINDOW 2: ABOUT ME FOLDER -->
+              <div class="os-window" id="win-about" data-window="about">
+                <div class="win-titlebar">
+                  <div class="win-tab-bar">
+                    <div class="win-tab active">
+                      <span class="tab-icon">👤</span>
+                      <span class="tab-title">About_Me</span>
+                      <span class="tab-close" data-win-close="about">✕</span>
+                    </div>
+                  </div>
+                  <div class="win-window-controls">
+                    <button class="win-ctrl-btn btn-min" title="Minimize">─</button>
+                    <button class="win-ctrl-btn btn-max" title="Maximize">▢</button>
+                    <button class="win-ctrl-btn btn-close" data-win-close="about" title="Close">✕</button>
+                  </div>
+                </div>
+                <div class="win-body-explorer">
+                  <div class="explorer-content full-width">
+                    <div class="bio-section">
+                      <div class="bio-header-badge">Vanrajsinh • Software Engineer</div>
+                      <p class="lead-bio">Passionate software engineer building resilient, scalable web applications with thoughtful craftsmanship, high performance, and intuitive user experiences.</p>
+                      <h5 class="section-heading">Professional Career Timeline</h5>
+                      <ul class="timeline-list">
+                        <li><strong>2024 — Present:</strong> Senior Full-Stack Engineer — Leading modern frontend architectures, microservices, and AI workflows.</li>
+                        <li><strong>2022 — 2024:</strong> Software Developer — Engineered interactive analytics dashboards, high-throughput backend APIs, and GraphQL gateways.</li>
+                        <li><strong>2020 — 2022:</strong> Software Engineering Intern — Open-source developer tools, automated test harnesses, and responsive UI components.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- WINDOW 3: SKILLS FOLDER -->
+              <div class="os-window" id="win-skills" data-window="skills">
+                <div class="win-titlebar">
+                  <div class="win-tab-bar">
+                    <div class="win-tab active">
+                      <span class="tab-icon">⚡</span>
+                      <span class="tab-title">Skills &amp; Technologies</span>
+                      <span class="tab-close" data-win-close="skills">✕</span>
+                    </div>
+                  </div>
+                  <div class="win-window-controls">
+                    <button class="win-ctrl-btn btn-min" title="Minimize">─</button>
+                    <button class="win-ctrl-btn btn-max" title="Maximize">▢</button>
+                    <button class="win-ctrl-btn btn-close" data-win-close="skills" title="Close">✕</button>
+                  </div>
+                </div>
+                <div class="win-body-explorer">
+                  <div class="explorer-content full-width">
+                    <div class="skills-grid">
+                      <div class="skill-box">
+                        <div class="box-title">⚡ Frontend Engineering</div>
+                        <div class="box-items">React 19, TypeScript, Next.js, Modern CSS, Three.js, Canvas 2D, GSAP, Tailwind CSS v4</div>
+                      </div>
+                      <div class="skill-box">
+                        <div class="box-title">🛠️ Backend Architecture</div>
+                        <div class="box-items">Node.js, Python, Express, FastAPI, PostgreSQL, Redis, ClickHouse, GraphQL, WebSockets</div>
+                      </div>
+                      <div class="skill-box">
+                        <div class="box-title">☁️ Cloud, DevOps &amp; Tools</div>
+                        <div class="box-items">Docker, AWS, GCP, Vercel, Git, Linux, Vitest, Playwright, CI/CD Actions</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- WINDOW 4: CONTACT & PROFILES -->
+              <div class="os-window" id="win-contact" data-window="contact">
+                <div class="win-titlebar">
+                  <div class="win-tab-bar">
+                    <div class="win-tab active">
+                      <span class="tab-icon">📬</span>
+                      <span class="tab-title">Contact &amp; Profiles</span>
+                      <span class="tab-close" data-win-close="contact">✕</span>
+                    </div>
+                  </div>
+                  <div class="win-window-controls">
+                    <button class="win-ctrl-btn btn-min" title="Minimize">─</button>
+                    <button class="win-ctrl-btn btn-max" title="Maximize">▢</button>
+                    <button class="win-ctrl-btn btn-close" data-win-close="contact" title="Close">✕</button>
+                  </div>
+                </div>
+
+                <!-- Explorer Navigation Bar -->
+                <div class="win-nav-bar">
+                  <div class="nav-arrows">
+                    <span class="nav-arrow disabled">←</span>
+                    <span class="nav-arrow disabled">→</span>
+                    <span class="nav-arrow">↑</span>
+                  </div>
+                  <div class="nav-address">
+                    <span class="addr-icon">📬</span>
+                    <span class="addr-path">This PC &gt; Contacts &amp; Socials</span>
+                  </div>
+                </div>
+
+                <div class="win-body-explorer">
+                  <!-- Left Sidebar Navigation -->
+                  <div class="explorer-sidebar">
+                    <div class="sidebar-section">Quick Access</div>
+                    <div class="sidebar-item" data-open="projects">📁 Projects</div>
+                    <div class="sidebar-item" data-open="about">👤 About Me</div>
+                    <div class="sidebar-item" data-open="skills">⚡ Skills</div>
+                    <div class="sidebar-item active">📬 Contact</div>
+                    <div class="sidebar-section" style="margin-top: 10px;">This PC</div>
+                    <div class="sidebar-item">💽 Local Disk (C:)</div>
+                    <div class="sidebar-item">💾 Dev Drive (D:)</div>
+                  </div>
+
+                  <!-- Right Main Content Area (Clean Direct Contact - No Message Form) -->
+                  <div class="explorer-content">
+                    <div class="contact-hub">
+                      <div class="contact-header">
+                        <h3>Get In Touch</h3>
+                        <p class="contact-subtitle">Direct communication channels &amp; professional profiles. Click to open or copy.</p>
+                      </div>
+
+                      <div class="contact-cards-grid">
+                        <!-- Direct Email Card -->
+                        <div class="contact-card">
+                          <div class="contact-card-icon">✉️</div>
+                          <div class="contact-card-info">
+                            <div class="contact-card-label">Direct Email</div>
+                            <div class="contact-card-value">vanrajsinh@example.com</div>
+                          </div>
+                          <div class="contact-card-actions">
+                            <a href="mailto:vanrajsinh@example.com" class="contact-action-btn primary">Open Mail Client ↗</a>
+                            <button type="button" class="contact-action-btn secondary copy-email-btn" id="copy-email-btn" data-clipboard="vanrajsinh@example.com">Copy Address 📋</button>
+                          </div>
+                        </div>
+
+                        <!-- GitHub Card -->
+                        <div class="contact-card">
+                          <div class="contact-card-icon">🐙</div>
+                          <div class="contact-card-info">
+                            <div class="contact-card-label">GitHub</div>
+                            <div class="contact-card-value">github.com/vanrajsinh650</div>
+                          </div>
+                          <div class="contact-card-actions">
+                            <a href="https://github.com/vanrajsinh650" target="_blank" rel="noopener noreferrer" class="contact-action-btn primary">Visit Profile ↗</a>
+                          </div>
+                        </div>
+
+                        <!-- LinkedIn Card -->
+                        <div class="contact-card">
+                          <div class="contact-card-icon">💼</div>
+                          <div class="contact-card-info">
+                            <div class="contact-card-label">LinkedIn</div>
+                            <div class="contact-card-value">linkedin.com/in/vanrajsinh</div>
+                          </div>
+                          <div class="contact-card-actions">
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-action-btn primary">Connect on LinkedIn ↗</a>
+                          </div>
+                        </div>
+
+                        <!-- Availability & Status Card -->
+                        <div class="contact-card full-span">
+                          <div class="contact-meta-row">
+                            <div class="meta-tag"><span class="status-dot"></span> Available for Full-Stack &amp; Engineering Roles</div>
+                            <div class="meta-tag">📍 Remote / India (IST UTC+5:30)</div>
+                            <div class="meta-tag">⚡ Responds within 24 hours</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- WINDOW 5: RESUME PREVIEW -->
+              <div class="os-window" id="win-resume" data-window="resume">
+                <div class="win-titlebar">
+                  <div class="win-tab-bar">
+                    <div class="win-tab active">
+                      <span class="tab-icon">📄</span>
+                      <span class="tab-title">Resume.pdf</span>
+                      <span class="tab-close" data-win-close="resume">✕</span>
+                    </div>
+                  </div>
+                  <div class="win-window-controls">
+                    <button class="win-ctrl-btn btn-min" title="Minimize">─</button>
+                    <button class="win-ctrl-btn btn-max" title="Maximize">▢</button>
+                    <button class="win-ctrl-btn btn-close" data-win-close="resume" title="Close">✕</button>
+                  </div>
+                </div>
+                <div class="win-body-explorer">
+                  <div class="explorer-content full-width resume-doc-center">
+                    <div class="resume-sheet">
+                      <h2>Vanrajsinh</h2>
+                      <div class="resume-sub">Software Engineer &amp; Full-Stack Architect</div>
+                      <hr>
+                      <p><strong>Core Focus:</strong> Modern Web Systems • High-Performance Interfaces • Distributed Services</p>
+                      <p><strong>Education:</strong> Bachelor of Science in Computer Science</p>
+                      <p><strong>Contact:</strong> vanrajsinh@example.com | GitHub: vanrajsinh650</p>
+                      <button class="win-submit-btn" style="margin-top: 10px;" onclick="alert('Resume PDF download initiated!')">⬇ Download PDF Copy</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- WINDOW 6 REMOVED (Terminal) -->
+
+            </div>
+
+            <!-- Windows 11 Centered Taskbar -->
+            <div class="win-taskbar">
+              <div class="taskbar-center">
+                <!-- Windows Logo -->
+                <div class="taskbar-btn win-start-btn" title="Start">
+                  <div class="win-grid-logo">
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+                <!-- Search -->
+                <div class="taskbar-btn" title="Search">🔍</div>
+                <!-- File Explorer -->
+                <div class="taskbar-btn active" data-app="projects" title="File Explorer (Projects)">📁</div>
+                <!-- VS Code -->
+                <div class="taskbar-btn" data-app="skills" title="Visual Studio Code (Skills)">💻</div>
+                <!-- Edge Browser -->
+                <div class="taskbar-btn" data-app="about" title="Browser (About Me)">🌐</div>
+                <!-- Mail -->
+                <div class="taskbar-btn" data-app="contact" title="Mail (Contact)">📬</div>
+              </div>
+
+              <!-- System Tray on Right -->
+              <div class="taskbar-tray">
+                <span class="tray-icon" title="Show hidden icons">^</span>
+                <span class="tray-icon" title="Wi-Fi Connected">📶</span>
+                <span class="tray-icon" title="Speakers: 100%">🔊</span>
+                <div class="tray-clock">
+                  <div id="taskbar-clock">10:40 AM</div>
+                  <div id="taskbar-date">10/25/2026</div>
+                </div>
+              </div>
+            </div>
+
+            </div> <!-- /computer-screen -->
+
+            <!-- ASUS TUF Bottom Chin with Logo Text -->
+            <div class="tuf-chin-badge">
+              <span class="tuf-logo-text">TUF GAMING</span>
+            </div>
+          </div> <!-- /laptop-bezel -->
+        </div> <!-- /laptop-lid -->
+
+        <!-- B. ASUS TUF Twin Stealth Hinges with Trapezoid Cutout -->
+        <div class="tuf-hinge-assembly">
+          <div class="tuf-hinge-block left"></div>
+          <div class="tuf-hinge-cutout">
+            <!-- 4-Way Crosshair Status LEDs Visible in Trapezoid Cutout -->
+            <div class="tuf-status-leds">
+              <span class="tuf-led power active" title="Power Indicator">●</span>
+              <span class="tuf-led battery active" title="Battery Status">⚡</span>
+              <span class="tuf-led drive" title="Storage Drive Activity">⟳</span>
+              <span class="tuf-led airplane" title="Airplane Mode">✈</span>
+            </div>
+          </div>
+          <div class="tuf-hinge-block right"></div>
+        </div>
+
+        <!-- C. ASUS TUF Gaming 15 Lower Base Deck (Chiclet Keyboard & Precision Trackpad) -->
+        <div class="laptop-deck tuf-deck">
+          <!-- TUF Upper Deck Controls Bar -->
+          <div class="tuf-upper-bar">
+            <div class="tuf-hotkeys">
+              <div class="tuf-hotkey" title="Volume Down">VOL -</div>
+              <div class="tuf-hotkey" title="Volume Up">VOL +</div>
+              <div class="tuf-hotkey" title="Mic Mute">MIC</div>
+              <div class="tuf-hotkey tuf-crate-key" title="Armoury Crate">TUF</div>
+            </div>
+            <div class="tuf-power-btn" id="tuf-power-btn" title="Power">
+              <span class="power-led"></span>
+            </div>
+          </div>
+
+          <div class="deck-surface-top">
+            <!-- Recessed Chiclet Keyboard Well with Mecha Texture -->
+            <div class="keyboard-well tuf-keyboard-well">
+              <div class="physical-keyboard tuf-keyboard" id="desk-keyboard">
+                <!-- Row 1: Function Keys -->
+                <div class="kb-row kb-row-fn">
+                  <div class="key key-esc" data-key="Escape">ESC</div>
+                  <div class="key key-fn" data-key="F1">F1</div>
+                  <div class="key key-fn" data-key="F2">F2</div>
+                  <div class="key key-fn" data-key="F3">F3</div>
+                  <div class="key key-fn" data-key="F4">F4</div>
+                  <div class="key key-fn" data-key="F5">F5</div>
+                  <div class="key key-fn" data-key="F6">F6</div>
+                  <div class="key key-fn" data-key="F7">F7</div>
+                  <div class="key key-fn" data-key="F8">F8</div>
+                  <div class="key key-fn" data-key="F9">F9</div>
+                  <div class="key key-fn" data-key="F10">F10</div>
+                  <div class="key key-fn" data-key="F11">F11</div>
+                  <div class="key key-fn" data-key="F12">F12</div>
+                  <div class="key key-del" data-key="Delete">DEL</div>
+                </div>
+
+                <!-- Row 2: Numbers -->
+                <div class="kb-row">
+                  <div class="key key-tilde" data-key="Backquote">`</div>
+                  <div class="key" data-key="Digit1">1</div>
+                  <div class="key" data-key="Digit2">2</div>
+                  <div class="key" data-key="Digit3">3</div>
+                  <div class="key" data-key="Digit4">4</div>
+                  <div class="key" data-key="Digit5">5</div>
+                  <div class="key" data-key="Digit6">6</div>
+                  <div class="key" data-key="Digit7">7</div>
+                  <div class="key" data-key="Digit8">8</div>
+                  <div class="key" data-key="Digit9">9</div>
+                  <div class="key" data-key="Digit0">0</div>
+                  <div class="key" data-key="Minus">-</div>
+                  <div class="key" data-key="Equal">=</div>
+                  <div class="key key-backspace" data-key="Backspace">⌫</div>
+                </div>
+
+                <!-- Row 3: Tab & QWERTY — WITH FROSTED WASD "W" KEY -->
+                <div class="kb-row">
+                  <div class="key key-tab" data-key="Tab">TAB</div>
+                  <div class="key" data-key="KeyQ">Q</div>
+                  <div class="key key-wasd" data-key="KeyW">W</div>
+                  <div class="key" data-key="KeyE">E</div>
+                  <div class="key" data-key="KeyR">R</div>
+                  <div class="key" data-key="KeyT">T</div>
+                  <div class="key" data-key="KeyY">Y</div>
+                  <div class="key" data-key="KeyU">U</div>
+                  <div class="key" data-key="KeyI">I</div>
+                  <div class="key" data-key="KeyO">O</div>
+                  <div class="key" data-key="KeyP">P</div>
+                  <div class="key" data-key="BracketLeft">[</div>
+                  <div class="key" data-key="BracketRight">]</div>
+                  <div class="key key-backslash" data-key="Backslash">\</div>
+                </div>
+
+                <!-- Row 4: Caps & Home Row — WITH FROSTED WASD "A", "S", "D" KEYS -->
+                <div class="kb-row">
+                  <div class="key key-caps" data-key="CapsLock">CAPS</div>
+                  <div class="key key-wasd" data-key="KeyA">A</div>
+                  <div class="key key-wasd" data-key="KeyS">S</div>
+                  <div class="key key-wasd" data-key="KeyD">D</div>
+                  <div class="key" data-key="KeyF">F</div>
+                  <div class="key" data-key="KeyG">G</div>
+                  <div class="key" data-key="KeyH">H</div>
+                  <div class="key" data-key="KeyJ">J</div>
+                  <div class="key" data-key="KeyK">K</div>
+                  <div class="key" data-key="KeyL">L</div>
+                  <div class="key" data-key="Semicolon">;</div>
+                  <div class="key" data-key="Quote">'</div>
+                  <div class="key key-enter" data-key="Enter">ENTER</div>
+                </div>
+
+                <!-- Row 5: Shift & Bottom Row -->
+                <div class="kb-row">
+                  <div class="key key-shift-l" data-key="ShiftLeft">SHIFT</div>
+                  <div class="key" data-key="KeyZ">Z</div>
+                  <div class="key" data-key="KeyX">X</div>
+                  <div class="key" data-key="KeyC">C</div>
+                  <div class="key" data-key="KeyV">V</div>
+                  <div class="key" data-key="KeyB">B</div>
+                  <div class="key" data-key="KeyN">N</div>
+                  <div class="key" data-key="KeyM">M</div>
+                  <div class="key" data-key="Comma">,</div>
+                  <div class="key" data-key="Period">.</div>
+                  <div class="key" data-key="Slash">/</div>
+                  <div class="key key-shift-r" data-key="ShiftRight">SHIFT</div>
+                  <div class="key key-arrow" data-key="ArrowUp">▲</div>
+                </div>
+
+                <!-- Row 6: Modifiers & Gaming Spacebar + Dedicated Arrow Keys -->
+                <div class="kb-row">
+                  <div class="key key-ctrl" data-key="ControlLeft">CTRL</div>
+                  <div class="key key-fn-mod" data-key="Fn">FN</div>
+                  <div class="key key-cmd" data-key="MetaLeft">WIN</div>
+                  <div class="key key-alt" data-key="AltLeft">ALT</div>
+                  <div class="key key-space tuf-space" data-key="Space">SPACE</div>
+                  <div class="key key-alt" data-key="AltRight">ALT</div>
+                  <div class="key key-ctrl" data-key="ControlRight">CTRL</div>
+                  <div class="key key-arrow" data-key="ArrowLeft">◄</div>
+                  <div class="key key-arrow" data-key="ArrowDown">▼</div>
+                  <div class="key key-arrow" data-key="ArrowRight">►</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TUF Palm Rest & Precision Trackpad with Laser Markings -->
+            <div class="tuf-palm-row">
+              <div class="tuf-palm-side left">
+                <span class="tuf-engraved-text">TUF GAMING // F15</span>
+              </div>
+              <div class="laptop-trackpad tuf-trackpad" id="laptop-trackpad">
+                <div class="trackpad-glass"></div>
+                <div class="tuf-trackpad-corner-mark"></div>
+              </div>
+              <div class="tuf-palm-side right">
+                <div class="tuf-spec-badge">
+                  <span class="badge-line1">GEFORCE RTX</span>
+                  <span class="badge-line2">144Hz DISPLAY</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3D Physical Front Bevel Lip of the Laptop Chassis -->
+          <div class="tuf-chassis-lip">
+            <div class="tuf-lip-notch"></div>
+          </div>
+        </div> <!-- /laptop-deck -->
+
+        <!-- Realistic Soft Laptop Shadow Cast on Wood Desk -->
+        <div class="laptop-desk-shadow"></div>
+      </div> <!-- /laptop-workstation -->
+
+      <!-- 4. Desk Accessories in Eye Reach (DUCK REMOVED) -->
+      <!-- Left: Ceramic Coffee Mug with Steam on Cork Coaster -->
+      <div class="desk-props-left">
+        <div class="desk-coaster">
+          <div class="desk-coffee" title="Fresh Hot Coffee">
+            <div class="coffee-cup">
+              <div class="cup-rim-shine"></div>
+              <div class="cup-handle"></div>
+              <div class="coffee-liquid"><div class="latte-swirl"></div></div>
+              <div class="steam-vapors"><span class="vapor v1"></span><span class="vapor v2"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Wireless Ergonomic Gaming Mouse (Matching TUF Mecha Aesthetic) -->
+      <div class="desk-props-right">
+        <div class="physical-mouse tuf-mouse" id="desk-mouse" title="Gaming Mouse">
+          <div class="mouse-body">
+            <div class="mouse-buttons-row">
+              <div class="mouse-btn mouse-btn-left" id="mouse-btn-l"></div>
+              <div class="mouse-wheel" id="mouse-wheel">
+                <span class="wheel-rib"></span>
+                <span class="wheel-rib"></span>
+                <span class="wheel-rib"></span>
+              </div>
+              <div class="mouse-btn mouse-btn-right" id="mouse-btn-r"></div>
+            </div>
+            <div class="mouse-palm">
+              <div class="tuf-mouse-emblem">⚡</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /desk-surface -->
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
