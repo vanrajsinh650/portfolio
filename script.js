@@ -18,6 +18,11 @@
   document.querySelectorAll('[data-close-window]').forEach((button) => button.addEventListener('click', () => {
     windows.forEach((item) => { item.hidden = true; item.classList.remove('is-open'); });
   }));
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      windows.forEach((item) => { item.hidden = true; item.classList.remove('is-open'); });
+    }
+  });
 
   const projectButtons = [...document.querySelectorAll('[data-project]')];
   const projectPanels = [...document.querySelectorAll('[data-project-panel]')];
